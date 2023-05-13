@@ -1,4 +1,3 @@
-
 // mui
 import Box from "@mui/material/Box";
 import Grid from "@mui/material/Grid";
@@ -6,6 +5,7 @@ import Grid from "@mui/material/Grid";
 // local
 import Topnav from "./components/Topnav";
 import LeftMenu from "./components/LeftMenu";
+import CenterContent from './components/CenterContent';
 
 const App = () => {
   const sx = styles();
@@ -17,29 +17,13 @@ const App = () => {
         <Grid
           sx={sx.container}
           container
-          // columnSpacing={3}
         >
-          <Grid
-            item
-            sx={sx.leftContent}
-          >
+          <Grid item sx={sx.leftContent}>
             <LeftMenu />
           </Grid>
 
-          <Grid
-            item
-            xs
-            sx={sx.centerContent}
-          >
-            center content
-          </Grid>
-
-          <Grid
-            item
-            xs={4}
-            sx={sx.rightContent}
-          >
-            right content
+          <Grid item xs sx={sx.centerContent} >
+            <CenterContent />
           </Grid>
         </Grid>
       </Box>
@@ -54,20 +38,18 @@ const styles = () => ({
   outerBox: {
     backgroundColor: '#edf6ff',
     py: 4,
-    px: 4,
+    minHeight: 'calc(100vh - 64px - 32px - 32px )',
   },
   container: {
     maxWidth: '1440px',
-    margin: 'auto',
+    mx: 'auto',
+    px: 3,
     gap: 3,
   },
   leftContent: {
-    minWidth: '300px',
+    minWidth: '250px',
   },
   centerContent: {
-
-  },
-  rightContent: {
-
+    overflowX: 'hidden',
   },
 });

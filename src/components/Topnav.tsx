@@ -42,6 +42,7 @@ const styles = () => ({
     flexGrow: 1,
     backgroundColor: '#FFFFFF',
     boxShadow: '0 2px 4px rgba(0, 0, 0, 0.1)',
+    position: 'relative',
   },
   appbar: {
     maxWidth: '1440px',

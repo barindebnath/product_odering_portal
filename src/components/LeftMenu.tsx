@@ -31,7 +31,7 @@ const LeftMenu = () => {
             key={item.id}
             container
             alignItems="center"
-            sx={menuitemStyle(Boolean(item.disabled), Boolean(item.active))}
+            sx={sx.menuitem(Boolean(item.disabled), Boolean(item.active))}
           >
             <Box sx={sx.iconWrapper}>
               {item.icon}
@@ -84,7 +84,7 @@ const menuItems: {
 const sx = {
   container: {
     background: '#FFFFFF',
-    padding: 3,
+    padding: 2,
     borderRadius: '8px',
   },
   logoBox: {
@@ -99,19 +99,14 @@ const sx = {
   menuItems: {
     mt: 4,
   },
+  menuitem: (isDisabled: boolean, isActive: boolean) => ({
+    py: 2,
+    px: 3,
+    color: isDisabled ? 'grey' : isActive ? 'red' : 'black',
+    backgroundColor: isActive ? '#ffeeee' : 'transparent',
+    borderRadius: '6px',
+  }),
   iconWrapper: {
     mr: 3,
   },
 };
-
-const menuitemStyle = (isDisabled: boolean, isActive: boolean) => ({
-  py: 2,
-  px: 3,
-  color: isDisabled ? 'grey' : isActive ? 'red' : 'black',
-  backgroundColor: isActive ? '#ffeeee' : 'transparent',
-  borderRadius: '6px',
-
-  '&:hover': {
-    backgroundColor: isActive ? '#ffeeee' : 'transparent',
-  },
-});
