@@ -1,4 +1,5 @@
 import React from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 
 // mui
 import Grid from "@mui/material/Grid";
@@ -8,26 +9,27 @@ import Typography from '@mui/material/Typography';
 // local
 import useCategory from '../../hooks/useCategory';
 import defaultImage from '../../logo.svg';
+import { RootState } from '../../redux/store';
+import { setCategory } from '../../redux/reducers/category';
 
-type Props = {
-
-}
-const Categories = (props: Props) => {
+const Categories = () => {
   const sx = styles();
+  const activeCategory = useSelector<RootState, string>(state => state.category);
+  const activeSubCategory = useSelector<RootState, string>(state => state.subCategory);
+  const dispatch = useDispatch();
   const { isLoading, isError, categories } = useCategory();
-  console.log(props)
+
   return (
-    <div>
       <Grid
         sx={sx.container}
         container
         wrap="nowrap"
         direction="row"
+        display={activeSubCategory ? 'none' : 'flex'}
       >
         {isError ? (
           <Typography>
             Someting went wrong!!!
-            {isError}
           </Typography>
         ) : isLoading ? (
           <Skeleton variant="rectangular" width={130} height={130} />
@@ -35,13 +37,20 @@ const Categories = (props: Props) => {
           <Grid
             item
             key={category.categoryId}
-            sx={sx.category}
+            sx={sx.category(activeCategory === category.categoryId)}
             title={category.categoryName}
+            onClick={() => dispatch(setCategory(category.categoryId))}
           >
             <img
               src={category.categoryImageURL || defaultImage}
-              alt={category.categoryName}
+              alt=''
+              onError={(e)=>{
+                (e.target as HTMLImageElement).src = defaultImage;
+              }}
             />
+            <Typography sx={sx.categoryTitle}>
+              {category.categoryName}
+            </Typography>
           </Grid>
         )) : (
           <Typography>
@@ -49,7 +58,6 @@ const Categories = (props: Props) => {
           </Typography>
         ) : null}
       </Grid>
-    </div>
   )
 }
 
@@ -62,15 +70,20 @@ const styles = () => ({
     overflowY: 'hidden',
     width: '100%',
   },
-  category: {
+  category: (isActive:boolean) => ({
     height: '130px',
     minWidth: '130px',
+    width: '130px',
     my: 1,
-    mx: 2,
+    mx: 1,
     cursor: 'pointer',
     borderRadius: '12px',
     border: '2px solid transparent',
     padding: 0.5,
+    position: 'relative',
+    display: 'flex',
+    justifyContent: 'center',
+    borderColor: isActive ? 'red' : 'transparent',
     '& img': {
       width: '100%',
       height: '100%',
@@ -78,7 +91,14 @@ const styles = () => ({
       objectPosition: 'center',
     },
     '&:hover': {
-      borderColor: '#ff9d9d',
+      borderColor: isActive ? 'red' : '#ff9d9d',
     },
+  }),
+  categoryTitle:{
+    fontSize: '13px',
+    color: '#b1b1b1',
+    position: 'absolute',
+    bottom: '5px',
+    fontWeight: 500,
   },
 });

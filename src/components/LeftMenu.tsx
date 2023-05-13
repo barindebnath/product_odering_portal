@@ -17,7 +17,6 @@ const LeftMenu = () => {
 
   return (
     <Box sx={sx.container}>
-
       <Box sx={sx.logoBox}>
         <img src={logo} className="logo" alt="logo" />
         <Typography variant="h6" >
@@ -86,6 +85,7 @@ const sx = {
     background: '#FFFFFF',
     padding: 2,
     borderRadius: '8px',
+    height: '100%',
   },
   logoBox: {
     mr: 2,

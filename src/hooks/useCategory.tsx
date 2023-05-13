@@ -13,7 +13,7 @@ const useCategory = () => {
   const fetchCategories = async () => {
     setLoading(true);
     const { result, error } = await getCategories();
-    error && setError(error); // need to update 
+    error && setError(true); // need to update 
     result && setCategories(result)
     setLoading(false);
   };
