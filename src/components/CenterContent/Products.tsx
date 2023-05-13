@@ -76,6 +76,7 @@ const styles = () => ({
     border: '1px solid grey',
     padding: 2,
     position: 'relative',
+    textAlign: 'center',
     '& img': {
       width: '150px',
       height: '150px',

@@ -39,7 +39,6 @@ const BottomContent = () => {
           sx={sx.subCategory(activeSubCategory === subCategory.subCategoryId)}
           title={subCategory.subCategoryName}
           onClick={() => dispatch(setSubCategory(subCategory.subCategoryId))}
-          direction="column"
         >
           <img
             src={subCategory.subCategoryImageURL || defaultImage}
@@ -80,6 +79,7 @@ const styles = () => ({
     display: 'flex',
     justifyContent: 'center',
     borderColor: isActive ? 'red' : 'grey',
+    flexDirection: 'column',
     '& img, & svg': {
       width: '50px',
       height: '50px',

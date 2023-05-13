@@ -26,9 +26,9 @@ const Topnav = () => {
             </Typography>
           </Box>
 
-          <Box sx={sx.centerContent} />
+          {/* <Box sx={sx.centerContent} /> */}
 
-          <Box sx={sx.rightContent} />
+          {/* <Box sx={sx.rightContent} /> */}
         </Toolbar>
       </AppBar>
     </Box>

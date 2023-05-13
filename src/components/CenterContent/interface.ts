@@ -18,13 +18,14 @@ export interface Product {
   itemNumber: string;
   itemDescription: string;
   expiryPeriod: string;
-  variants?: (VariantsEntity)[] | null;
+  variants?: ProductVariant[] | null;
   productImages?: string[] | null;
   productId: string;
   currency: Currency;
   priceTerms: string;
 }
-interface VariantsEntity {
+
+export interface ProductVariant {
   _id: string;
   bpCatalogNumber: string;
   colorCode: string;
