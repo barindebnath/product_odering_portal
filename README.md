@@ -1,46 +1,23 @@
-# Getting Started with Create React App
+Agenda: To create a product Ordering Portal
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Create 4 screens to add products to cart and check out.
 
-## Available Scripts
+Screen 1: The Screen should have the main category on the top panel like Applications, Ink type, printheads etc. If more than 4 or 5 categories are added, then it should be horizontally scrollable. On clicking on the main category item, the subcategory items of the main category should be displayed in the middle. On click of one particular sub category, it should be taken to the next screen, i.e., Screen 2.
 
-In the project directory, you can run:
+Note: If no category/sub-category is found, then display a text “No category/Sub-category found”
 
-### `yarn start`
+Screen 2: On the bottom panel, all sub - categories are listed. On click of any sub-category, its corresponding products are displayed in the centre. The heart icon(favourite icon) is not functional. On click of the product, a pop up should open with details as shown in Screen 3.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Note: If no sub-category/product is found, then display a text “No Sub-category/Product found”
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Screen 3: The Pop up should have the product image(only one image is needed), bp catalogue number, item description, sale description and gross price.Option to choose colour, packaging and quantity should be available. Minimum quantity is 12 and maximum is 100. “Heart icon(favourite icon)” &“Need urgent order” are not functional. 
 
-### `yarn test`
+Once “Add” is clicked, that item should be added on the order list in the right. If an item with the same attributes and quantity needs to be added, then a new entry should not be added, but the existing order item should be updated in the order list.If the close button of a particular product is clicked then that item should be removed. If the close button at top right of the order list is clicked, then the order list should be closed.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Once the “Add to cart” button is clicked, then the pop up window will be closed and on Screen 1 the cart section on the right should be populated.
 
-### `yarn build`
+Screen 4: We can see the items added to the cart being listed on the right. Option to “See all” should enable the user to see all items added to cart(in a different pop-up). “Edit” option should open Screen 3 and enable the user to make changes to the order list. “Add” option in other instructions and “view”  option in Addresses need not be functional. Purchase order number and address can be just static data. 
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+The important part is that the calculations should be right. Item total should be accurate and the CGST, SGST and IGST should each be 9% of the item total. 
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `yarn eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+When  you click on “clear cart”, the cart should be cleared. When you click on “Place order”, a toast message should appear saying “Order placed” and the cart should be cleared.
