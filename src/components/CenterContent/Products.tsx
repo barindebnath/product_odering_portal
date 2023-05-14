@@ -37,7 +37,7 @@ const Products = () => {
           item
           key={product.productId}
           sx={sx.product}
-          onClick={() => dispatch(setProduct(product))}
+          onClick={() => dispatch(setProduct(product.productId))}
         >
           <img
             src={(product.productImages && product.productImages[0]) || defaultImage}
@@ -55,7 +55,7 @@ const Products = () => {
         </Grid>
       )) : (
         <Typography>
-          No sub-categories found
+          No products found
         </Typography>
       ) : null}
     </Grid>

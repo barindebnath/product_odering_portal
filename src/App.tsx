@@ -7,7 +7,8 @@ import Topnav from "./components/Topnav";
 import LeftMenu from "./components/LeftMenu";
 import CenterContent from './components/CenterContent';
 import BottomContent from "./components/BottomContent";
-import AddProductModal from "./components/AddProductModal";
+import ProductModal from "./components/ProductModal";
+import RightContent from "./components/RightContent";
 
 const App = () => {
   const sx = styles();
@@ -31,12 +32,12 @@ const App = () => {
             </Grid>
           </Grid>
 
-          <Grid item xs={3} sx={sx.rightContent}>
-            right content
+          <Grid xs={3.5} item sx={sx.rightContent}>
+            <RightContent />
           </Grid>
         </Grid>
       </Box>
-      <AddProductModal />
+      <ProductModal />
     </div>
 
   );
@@ -62,6 +63,7 @@ const styles = () => ({
   },
   leftCenterContainer: {
     gap: 3,
+    minHeight: '100%',
   },
   leftContent: {
     minWidth: '250px',

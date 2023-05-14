@@ -18,10 +18,13 @@ export interface Product {
   itemNumber: string;
   itemDescription: string;
   expiryPeriod: string;
-  variants?: ProductVariant[] | null;
-  productImages?: string[] | null;
+  variants?: ProductVariant[];
+  productImages?: string[];
   productId: string;
-  currency: Currency;
+  currency: {
+    type: string;
+    symbol: string;
+  };
   priceTerms: string;
 }
 
@@ -36,7 +39,14 @@ export interface ProductVariant {
   variantId: string;
   grossPrice: string;
 }
-interface Currency {
-  type: string;
-  symbol: string;
+
+export interface CartProduct {
+  productId: string;
+  variantId: string;
+  itemDescription: string;
+  colorDescription: string;
+  quantity: number;
+  grossPrice: string;
+  currencySymbol: string;
+  productImage?: string;
 }

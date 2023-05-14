@@ -98,7 +98,7 @@ const styles = () => ({
     fontSize: '13px',
     color: '#b1b1b1',
     position: 'absolute',
-    bottom: '5px',
+    bottom: '2px',
     fontWeight: 500,
   },
 });
