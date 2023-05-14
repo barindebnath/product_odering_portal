@@ -1,0 +1,16 @@
+{
+  "files": {
+    "main.css": "/product_odering_portal/static/css/main.233b3b67.css",
+    "main.js": "/product_odering_portal/static/js/main.f2f3a552.js",
+    "static/js/787.8356fca0.chunk.js": "/product_odering_portal/static/js/787.8356fca0.chunk.js",
+    "static/media/logo.svg": "/product_odering_portal/static/media/logo.6ce24c58023cc2f8fd88fe9d219db6c6.svg",
+    "index.html": "/product_odering_portal/index.html",
+    "main.233b3b67.css.map": "/product_odering_portal/static/css/main.233b3b67.css.map",
+    "main.f2f3a552.js.map": "/product_odering_portal/static/js/main.f2f3a552.js.map",
+    "787.8356fca0.chunk.js.map": "/product_odering_portal/static/js/787.8356fca0.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.233b3b67.css",
+    "static/js/main.f2f3a552.js"
+  ]
+}
